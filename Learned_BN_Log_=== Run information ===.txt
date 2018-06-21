@@ -1,0 +1,103 @@
+=== Run information ===
+
+Scheme:weka.classifiers.bayes.BayesNet -D -Q weka.classifiers.bayes.net.search.local.K2 -- -P 10 -S BAYES -E weka.classifiers.bayes.net.estimate.SimpleEstimator -- -A 0.5
+Relation:     data__with_tab-weka.filters.unsupervised.attribute.Discretize-B5-M0.0-R1,2,3,5,6,7,9,10,11,13-16-weka.filters.unsupervised.attribute.NumericToNominal-R4,8,12,17-last
+Instances:    249
+Attributes:   28
+              Volt_X
+              Curr_X
+              Tem_X
+              Lim_X
+              Volt_Y
+              Curr_Y
+              Tem_Y
+              Lim_Y
+              Volt_Z
+              Curr_Z
+              Tem_Z
+              Lim_Z
+              Volt_Spdle
+              Curr_Spdle
+              Tem_Spdle
+              Duty_Cycl_Spdle
+              X_Over_Curr
+              Y_Over_Curr
+              Z_Over_Curr
+              Spdle_Over_Curr
+              X_Short_Cir
+              Y_Short_Cir
+              Z_Short_Cir
+              Spdle_Short_Cir
+              X_Lim_Fault
+              Y_Lim_Fault
+              Z_Lim_Fault
+              Fault
+Test mode:10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+Bayes Network Classifier
+not using ADTree
+#attributes=28 #classindex=27
+Network structure (nodes followed by parents)
+Volt_X(5): Fault 
+Curr_X(5): Fault 
+Tem_X(5): Fault Volt_X 
+Lim_X(2): Fault Tem_X 
+Volt_Y(5): Fault 
+Curr_Y(5): Fault 
+Tem_Y(5): Fault Volt_Y 
+Lim_Y(2): Fault Tem_X Lim_X Volt_Y 
+Volt_Z(5): Fault 
+Curr_Z(5): Fault 
+Tem_Z(5): Fault Volt_Z 
+Lim_Z(2): Fault Tem_X Lim_X Lim_Y Volt_Y Volt_Z 
+Volt_Spdle(5): Fault 
+Curr_Spdle(5): Fault 
+Tem_Spdle(5): Fault Curr_Spdle Volt_Spdle Volt_X Volt_Y Volt_Z 
+Duty_Cycl_Spdle(5): Fault Tem_Spdle Lim_X Lim_Y Lim_Z Tem_X 
+X_Over_Curr(2): Fault Tem_X Volt_X 
+Y_Over_Curr(2): Fault Curr_Y 
+Z_Over_Curr(2): Fault Curr_Z 
+Spdle_Over_Curr(2): Fault Curr_Spdle 
+X_Short_Cir(2): Fault Volt_X 
+Y_Short_Cir(2): Fault Volt_Y 
+Z_Short_Cir(2): Fault Volt_Z 
+Spdle_Short_Cir(2): Fault Volt_Spdle 
+X_Lim_Fault(2): Fault Lim_X 
+Y_Lim_Fault(2): Fault Lim_Y 
+Z_Lim_Fault(2): Fault Lim_Z 
+Fault(2): 
+LogScore Bayes: -1790.1914042810133
+LogScore BDeu: -274894.97704650264
+LogScore MDL: -106794.94331831754
+LogScore ENTROPY: -29476.117153707473
+LogScore AIC: -57503.117153708095
+
+
+Time taken to build model: 0.2 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances         249              100      %
+Incorrectly Classified Instances         0                0      %
+Kappa statistic                          1     
+Mean absolute error                      0.0094
+Root mean squared error                  0.0342
+Relative absolute error                  3.4711 %
+Root relative squared error              9.3263 %
+Total Number of Instances              249     
+
+=== Detailed Accuracy By Class ===
+
+               TP Rate   FP Rate   Precision   Recall  F-Measure   ROC Area  Class
+                 1         0          1         1         1          1        0
+                 1         0          1         1         1          1        1
+Weighted Avg.    1         0          1         1         1          1    
+
+=== Confusion Matrix ===
+
+   a   b   <-- classified as
+  40   0 |   a = 0
+   0 209 |   b = 1
